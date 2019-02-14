@@ -208,7 +208,14 @@ function readFolder(fcFolder, fcQueryArray) {
 			var file = files[i];
 			file.encoding = "UTF-8";
 			file.open ("r");	
-			searchXML = XML (file.read());
+			try {
+				searchXML = XML (file.read());
+			}
+			catch (e) {
+				alert("Could not read XML File [" + file +  "]. If it's not a FindChange Query, remove it from the folder!");
+				file.parent.execute();
+				continue;
+			}
 			file.close();
 			findWhat = String (searchXML.xpath ("/Query/Description/FindExpression/@value"));
 			changeTo = String (searchXML.xpath ("/Query/Description/ReplaceExpression/@value"));
@@ -660,14 +667,18 @@ function writeTextFile (_file, _string) {
 }
 
 
-/** Get Filepath from current script */
+
+/** Get Filepath from current script  */
 /*Folder*/ function getScriptFolderPath() {
+	var skriptPath;
 	try {
-		scriptPath = app.activeScript.parent;
+		$.level = 0;
+		skriptPath  = app.activeScript.parent;
 	} 
 	catch (e) { 
 		/* We're running from the ESTK*/
-		scriptPath = File(e.fileName).parent;
+		$.level = 2;
+		skriptPath = File(e.fileName).parent;
 	}
-	return scriptPath;
+	return skriptPath;
 }
