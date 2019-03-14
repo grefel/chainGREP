@@ -543,10 +543,10 @@ function saveQueryToScript(fcObject) {
 
 	}
 	scriptString += "	if (changeObject.hasOwnProperty('characters') && changeObject.characters.length == 0) return;\n";
-	scriptString += "	var doc = app.documents[0];\n";
-	scriptString += "	var style;\n";
-	//~ 	scriptString += "	var scriptVersion = app.scriptPreferences.version;\n";
-	//~ 	scriptString += "	app.scriptPreferences.version = " + app.scriptPreferences.version + ";\n";
+	// scriptString += "	var doc = app.documents[0];\n";
+	// scriptString += "	var style;\n";
+	// scriptString += "	var scriptVersion = app.scriptPreferences.version;\n";
+	// scriptString += "	app.scriptPreferences.version = " + app.scriptPreferences.version + ";\n";
 	scriptString += "	var options = app.findChange" + typ + "Options.properties;\n";
 
 
