@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Current Script",
             "program": "${file}",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "targetSpecifier": "indesign-14.064", 
             "engineName": "main" 
         },

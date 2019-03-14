@@ -596,7 +596,6 @@ function saveQueryToScript(fcObject) {
 			}
 
 			scriptString += "		changeObject.change" + typ + "();\n";
-
 			scriptString += "	} catch (e) {alert(e + ' at line ' + e.line)}\n"
 		}
 	}
