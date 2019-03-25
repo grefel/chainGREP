@@ -281,8 +281,8 @@ function getQueryListUI(fcQueryArray) {
 	list.preferredSize.width = 400;
 
 	fcQueryArray.sort(function(a, b){
-		if(a.name < b.name) { return -1; }
-		if(a.name > b.name) { return 1; }
+		if(a.name.toUpperCase() < b.name.toUpperCase()) { return -1; }
+		if(a.name.toUpperCase() > b.name.toUpperCase()) { return 1; }
 		return 0;
 	})
 
