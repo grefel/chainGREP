@@ -159,6 +159,12 @@ var uiStrings = {
 		de: "Fehlendes Ersetze-Absatzsformat [%1] bei Abfrage [%2]",
 		fr: "La requête [%2] invoque en remplacement un style de paragraphe manquant : [%1]",
 		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした"
+	},
+	couldNotLoadQuery: {
+		en: "Could not load Query [%1] Error: ",
+		de: "Die Abfrage [%1] konnte nicht geladen werden. Fehler: ",
+		fr: "Could not load Query [%1] Error: ",
+		ja_JP: "Could not load Query [%1] Error: "
 	}
 
 }
@@ -556,7 +562,12 @@ function saveQueryToScript(fcObject) {
 			fcQueryObject = fcQueryArray[i];
 			// fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", findPStyle:"", findCStyle:"", changePStyle:"", changeCStyle:""}
 			fcQuery = fcQueryObject.name;
-			app.loadFindChangeQuery(fcQuery, SearchModes.GREP_SEARCH);
+			try {
+				app.loadFindChangeQuery(fcQuery, SearchModes.GREP_SEARCH);
+			}
+			catch (e) {
+				alert(localize(uiStrings.couldNotLoadQuery, fcQuery) + "\n" + e);
+			}
 
 			scriptString += "	app.find" + typ + "Preferences = NothingEnum.NOTHING;\n";
 			scriptString += "	app.change" + typ + "Preferences = NothingEnum.NOTHING;\n";
