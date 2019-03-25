@@ -166,7 +166,6 @@ var uiStrings = {
 		fr: "Could not load Query [%1] Error: ",
 		ja_JP: "Could not load Query [%1] Error: "
 	}
-
 }
 
 
@@ -281,6 +280,12 @@ function getQueryListUI(fcQueryArray) {
 	list.preferredSize.height = 350;
 	list.preferredSize.width = 400;
 
+	fcQueryArray.sort(function(a, b){
+		if(a.name < b.name) { return -1; }
+		if(a.name > b.name) { return 1; }
+		return 0;
+	})
+
 	for (var i = 0; i < fcQueryArray.length - 1; i++) {
 		var lItem = list.add("item", fcQueryArray[i].name);
 		lItem.fcQuery = fcQueryArray[i];
@@ -297,56 +302,56 @@ function getQueryListUI(fcQueryArray) {
 		var downBtn = ctrlGroup.add("button", undefined, localize(uiStrings.buttonDown));
 		ctrlGroup.add("StaticText", undefined, "|");
 		var removeBtn = ctrlGroup.add("button", undefined, localize(uiStrings.buttonRm));
-
-		upBtn.onClick = function () {
-			if (list.selection == null) {
-				return;
-			}
-			fixSelection(list.selection);
-			var first = list.selection[0].index;
-			if (first == 0 || !continuous(list.selection)) return;
-			var last = first + list.selection.length;
-			for (var i = first; i < last; i++) {
-				swap(list.items[i - 1], list.items[i]);
-			}
-			list.selection = null;
-			for (var i = first - 1; i < last - 1; i++) {
-				list.selection = i;
-			}
+	}
+	upBtn.onClick = function () {
+		if (list.selection == null) {
+			return;
 		}
-		downBtn.onClick = function () {
-			if (list.selection == null) {
-				return;
-			}
-			fixSelection(list.selection);
-			var last = list.selection[list.selection.length - 1].index;
-			if (last == list.items.length - 1 || !continuous(list.selection)) return;
-			var first = list.selection[0].index;
-			for (var i = last; i >= first; i--) {
-				swap(list.items[i + 1], list.items[i]);
-			}
-			list.selection = null;
-			for (var i = first + 1; i <= last + 1; i++) {
-				list.selection = i;
-			}
+		fixSelection(list.selection);
+		var first = list.selection[0].index;
+		if (first == 0 || !continuous(list.selection)) return;
+		var last = first + list.selection.length;
+		for (var i = first; i < last; i++) {
+			swap(list.items[i - 1], list.items[i]);
 		}
-
-		removeBtn.onClick = function () {
-			if (list.selection == null) {
-				return;
-			}
-			var sel = list.selection[0].index;
-			for (var i = list.selection.length - 1; i >= 0; i--) {
-				list.remove(list.selection[i]);
-			}
-			if (sel > list.items.length - 1) {
-				list.selection = null;
-			}
-			else {
-				list.selection = sel;
-			}
+		list.selection = null;
+		for (var i = first - 1; i < last - 1; i++) {
+			list.selection = i;
 		}
 	}
+	downBtn.onClick = function () {
+		if (list.selection == null) {
+			return;
+		}
+		fixSelection(list.selection);
+		var last = list.selection[list.selection.length - 1].index;
+		if (last == list.items.length - 1 || !continuous(list.selection)) return;
+		var first = list.selection[0].index;
+		for (var i = last; i >= first; i--) {
+			swap(list.items[i + 1], list.items[i]);
+		}
+		list.selection = null;
+		for (var i = first + 1; i <= last + 1; i++) {
+			list.selection = i;
+		}
+	}
+
+	removeBtn.onClick = function () {
+		if (list.selection == null) {
+			return;
+		}
+		var sel = list.selection[0].index;
+		for (var i = list.selection.length - 1; i >= 0; i--) {
+			list.remove(list.selection[i]);
+		}
+		if (sel > list.items.length - 1) {
+			list.selection = null;
+		}
+		else {
+			list.selection = sel;
+		}
+	}
+
 
 
 	function continuous(sel) {
