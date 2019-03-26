@@ -266,7 +266,7 @@ function readFolder(fcFolder, fcQueryArray) {
 
 // UI for building the chain
 function getQueryListUI(fcQueryArray) {
-	var w = new Window("dialog", localize(uiStrings.windowTitle), undefined, /{resizeable: true}/);
+	var w = new Window("dialog", localize(uiStrings.windowTitle), undefined, /*{resizeable: true}*/);
 	w.orientation = "column";
 	w.helpTip = localize(uiStrings.helpTip);
 
@@ -274,10 +274,10 @@ function getQueryListUI(fcQueryArray) {
 	lbPanel.alignment = ["fill", "fill"];
 	lbPanel.margins = [10, 20, 10, 10];
 
-	var list = lbPanel.add("listbox", undefined, undefined, { numberOfColumns: 4, showHeaders: true, columnTitles: ["Finc/Change Query", "Type", "Find", "Change"], multiselect: true, columnWidths: [350, 50, 200, 100] });
+	var list = lbPanel.add("listbox", undefined, undefined, { numberOfColumns: 4, showHeaders: true, columnTitles: ["Finc/Change Query", "Type", "Find", "Change"], multiselect: true, columnWidths: [350, 50, 100, 100] });
 	list.alignment = ["fill", "fill"];
 	list.preferredSize.height = 350;
-	list.preferredSize.width = 400;
+	list.preferredSize.width = 420;
 
 	fcQueryArray.sort(function(a, b){
 		if(a.name.toUpperCase() < b.name.toUpperCase()) { return -1; }
@@ -288,6 +288,7 @@ function getQueryListUI(fcQueryArray) {
 	for (var i = 0; i < fcQueryArray.length - 1; i++) {
 		var lItem = list.add("item", fcQueryArray[i].name);
 		lItem.fcQuery = fcQueryArray[i];
+		lItem.helpTip = "Find: " + fcQueryArray[i].findWhat + "\rChange: " + fcQueryArray[i].changeTo;
 		lItem.subItems[0].text = fcQueryArray[i].type;
 		lItem.subItems[1].text = fcQueryArray[i].findWhat;
 		lItem.subItems[2].text = fcQueryArray[i].changeTo;
