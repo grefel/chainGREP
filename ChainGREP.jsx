@@ -266,7 +266,6 @@ function readFolder(fcFolder, fcQueryArray) {
 
 // UI for building the chain
 function getQueryListUI(fcQueryArray) {
-	var scope = "";
 	var w = new Window("dialog", localize(uiStrings.windowTitle), undefined, /{resizeable: true}/);
 	w.orientation = "column";
 	w.helpTip = localize(uiStrings.helpTip);
@@ -387,27 +386,18 @@ function getQueryListUI(fcQueryArray) {
 		}
 	}
 
-	var scopeGroup = w.add("Panel", undefined, localize(uiStrings.fcScope));
-	scopeGroup.orientation = "row";
-	scopeGroup.alignment = "fill";
-	scopeGroup.margins = [10, 20, 10, 10];
+	var scopePanel = w.add("Panel", undefined, localize(uiStrings.fcScope));
+	scopePanel.orientation = "row";
+	scopePanel.alignment = "fill";
+	scopePanel.margins = [10, 20, 10, 10];
 
-	with (scopeGroup) {
+	with (scopePanel) {
 		rButScopeDoc = add("radiobutton", undefined, localize(uiStrings.document));
 		rButScopeDoc.value = true;
 		rButScopeSel = add("radiobutton", undefined, localize(uiStrings.selection));
 		rButScopeStory = add("radiobutton", undefined, localize(uiStrings.story));
 		rButScopeUser = add("radiobutton", undefined, localize(uiStrings.userSelect));
 	}
-	//~ 	var typeGroup = w.add ("Panel", undefined, "Script Type");
-	//~ 	typeGroup.orientation = "row";
-	//~ 	typeGroup.alignment = "fill";
-	//~ 	typeGroup.margins = [10,20,10,10];
-	//~ 	with (typeGroup) {
-	//~ 		rButTypePortable = add( "radiobutton", undefined, 'Portable');
-	//~ 		rButTypePortable.value = true;
-	//~ 		rButTypeQuery= add( "radiobutton", undefined, 'Query names (smaller file size)' );
-	//~ 	}
 
 	var fileGroup = w.add("Panel", undefined, localize(uiStrings.scriptName));
 	fileGroup.orientation = "row";
@@ -520,11 +510,11 @@ function saveQueryToScript(fcObject) {
 		scriptString += "	else {\n";
 
 		scriptString += "		var w = new Window ('dialog', localize(" + uiStrings.fcScope.toSource() + ") );\n";
-		scriptString += "		var scopeGroup = w.add ('Panel', undefined, localize(" + uiStrings.fcScope.toSource() + ") );\n";
-		scriptString += "		scopeGroup.alignment = 'fill';\n";
-		scriptString += "		scopeGroup.alignChildren = 'fill';\n";
-		scriptString += "		scopeGroup.margins = [10,20,10,10];\n";
-		scriptString += "		with (scopeGroup) {\n";
+		scriptString += "		var scopePanel = w.add ('Panel', undefined, localize(" + uiStrings.fcScope.toSource() + ") );\n";
+		scriptString += "		scopePanel.alignment = 'fill';\n";
+		scriptString += "		scopePanel.alignChildren = 'fill';\n";
+		scriptString += "		scopePanel.margins = [10,20,10,10];\n";
+		scriptString += "		with (scopePanel) {\n";
 		scriptString += "			rButScopeDoc = add( 'radiobutton', undefined, localize(" + uiStrings.document.toSource() + ") );\n";
 		scriptString += "			rButScopeDoc.value = true;\n";
 		scriptString += "			rButScopeSel= add( 'radiobutton', undefined, localize(" + uiStrings.selection.toSource() + ") );\n";
