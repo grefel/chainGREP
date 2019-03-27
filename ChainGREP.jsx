@@ -2,7 +2,7 @@
 /* 
 Version:	1.9
 ChainGREP.jsx is licensed GNU GENERAL PUBLIC LICENSE Version 3
-Last-Change:	2019-03-25
+Last-Change:	2019-03-27
 Author: Gregor Fellenz http://publishingx.de
 
 Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
