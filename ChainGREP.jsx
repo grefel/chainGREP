@@ -545,10 +545,10 @@ function saveQueryToScript(fcObject) {
 
 	}
 	scriptString += "	if (changeObject.hasOwnProperty('characters') && changeObject.characters.length == 0) return;\n";
-	// scriptString += "	var doc = app.documents[0];\n";
-	// scriptString += "	var style;\n";
-	// scriptString += "	var scriptVersion = app.scriptPreferences.version;\n";
-	// scriptString += "	app.scriptPreferences.version = " + app.scriptPreferences.version + ";\n";
+	scriptString += "	var doc = app.documents[0];\n";
+	scriptString += "	var style;\n";
+	scriptString += "	var scriptVersion = app.scriptPreferences.version;\n";
+	scriptString += "	app.scriptPreferences.version = " + app.scriptPreferences.version + ";\n";
 	scriptString += "	var options = app.findChange" + typ + "Options.properties;\n";
 
 
@@ -624,7 +624,7 @@ function saveQueryToScript(fcObject) {
 	scriptString += "	app.findChange" + typ + "Options.properties = options;\n";
 	scriptString += "	app.find" + typ + "Preferences = NothingEnum.NOTHING;\n";
 	scriptString += "	app.change" + typ + "Preferences = NothingEnum.NOTHING;\n";
-	//~ 	scriptString += "	app.scriptPreferences.version = scriptVersion;\n";
+	scriptString += "	app.scriptPreferences.version = scriptVersion;\n";
 	scriptString += "};\n\n";
 
 	scriptString += "function getStyleByString(docOrGroup, string, property) {\n";
