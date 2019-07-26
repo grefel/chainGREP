@@ -242,7 +242,7 @@ function readFolder(fcFolder, fcQueryArray) {
 				searchXML = XML(file.read());
 			}
 			catch (e) {
-				alert("Could not read XML File [" + file + "]. If it's not a FindChange Query, remove it from the folder!");
+				alert("Could not read XML File [" + decodeURI(file) + "]. If it's not a FindChange Query, remove it from the folder!");
 				file.parent.execute();
 				continue;
 			}
