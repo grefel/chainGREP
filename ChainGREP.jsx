@@ -1,8 +1,8 @@
 ﻿//DESCRIPTION:Create FindChange Skripts based on saved Queries
 /* 
-Version:	1.9
+Version:	1.10
 ChainGREP.jsx is licensed GNU GENERAL PUBLIC LICENSE Version 3
-Last-Change:	2019-03-27
+Last-Change:	2019-10-06
 Author: Gregor Fellenz http://publishingx.de
 
 Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
@@ -395,7 +395,7 @@ function getQueryListUI(fcQueryArray) {
 	with (scopePanel) {
 		rButScopeDoc = add("radiobutton", undefined, localize(uiStrings.document));
 		rButScopeDoc.value = true;
-		rButScopeSel = add("radiobutton", undefined, localize(uiStrings.selection));
+		// rButScopeSel = add("radiobutton", undefined, localize(uiStrings.selection));
 		rButScopeStory = add("radiobutton", undefined, localize(uiStrings.story));
 		rButScopeUser = add("radiobutton", undefined, localize(uiStrings.userSelect));
 	}
@@ -430,7 +430,7 @@ function getQueryListUI(fcQueryArray) {
 				fcObject.fcQueryArray[i] = list.items[i].fcQuery;
 			}
 			if (rButScopeDoc.value) fcObject.scope = "doc";
-			else if (rButScopeSel.value) fcObject.scope = "selection";
+			// else if (rButScopeSel.value) fcObject.scope = "selection";
 			else if (rButScopeStory.value) fcObject.scope = "story";
 			else if (rButScopeUser.value) fcObject.scope = "user";
 
@@ -490,13 +490,13 @@ function saveQueryToScript(fcObject) {
 	if (scope == "doc") {
 		scriptString += "	var changeObject = app.documents[0];\n";
 	}
-	else if (scope == "selection") {
-		scriptString += "	if (app.selection.length != 1 || !app.selection[0].hasOwnProperty('changeGrep')) {\n";
-		scriptString += "		alert('Please select only one textframe or text range!');\n";
-		scriptString += "		return;\n";
-		scriptString += "	}\n";
-		scriptString += "	var changeObject = app.selection[0];\n";
-	}
+	// else if (scope == "selection") {
+	// 	scriptString += "	if (app.selection.length != 1 || !app.selection[0].hasOwnProperty('changeGrep')) {\n";
+	// 	scriptString += "		alert('Please select only one textframe or text range!');\n";
+	// 	scriptString += "		return;\n";
+	// 	scriptString += "	}\n";
+	// 	scriptString += "	var changeObject = app.selection[0];\n";
+	// }
 	else if (scope == "story") {
 		scriptString += "	if (app.selection.length != 1 || !app.selection[0].hasOwnProperty('changeGrep')) {\n";
 		scriptString += "		alert('Please select only one textframe or text range!');\n";
@@ -518,7 +518,7 @@ function saveQueryToScript(fcObject) {
 		scriptString += "		with (scopePanel) {\n";
 		scriptString += "			rButScopeDoc = add( 'radiobutton', undefined, localize(" + uiStrings.document.toSource() + ") );\n";
 		scriptString += "			rButScopeDoc.value = true;\n";
-		scriptString += "			rButScopeSel= add( 'radiobutton', undefined, localize(" + uiStrings.selection.toSource() + ") );\n";
+		// scriptString += "			rButScopeSel= add( 'radiobutton', undefined, localize(" + uiStrings.selection.toSource() + ") );\n";
 		scriptString += "			rButScopeStory= add( 'radiobutton', undefined, localize(" + uiStrings.story.toSource() + ") );\n";
 		scriptString += "		}\n";
 
@@ -532,7 +532,7 @@ function saveQueryToScript(fcObject) {
 		scriptString += "			}\n";
 		scriptString += "			okButton.onClick = function () {\n";
 		scriptString += "				if (rButScopeDoc.value) scope = app.documents[0];\n";
-		scriptString += "				else if (rButScopeSel.value) scope = app.selection[0];\n";
+		// scriptString += "				else if (rButScopeSel.value) scope = app.selection[0];\n";
 		scriptString += "				else if (rButScopeStory.value) scope = app.selection[0].parentStory;\n";
 		scriptString += "				w.close(1);\n";
 		scriptString += "			}\n";
