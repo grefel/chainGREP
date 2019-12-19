@@ -1,8 +1,8 @@
 ﻿//DESCRIPTION:Create FindChange Skripts based on saved Queries
 /* 
-Version:	1.10
+Version:	1.11
 ChainGREP.jsx is licensed GNU GENERAL PUBLIC LICENSE Version 3
-Last-Change:	2019-10-06
+Last-Change:	2019-12-19
 Author: Gregor Fellenz http://publishingx.de
 
 Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
