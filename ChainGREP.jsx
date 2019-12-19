@@ -15,156 +15,182 @@ Example of an fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", 
 */
 // Japanese Translations by Yu https://twitter.com/Yo_Yu_You
 // French Translation by Marc Autret http://www.indiscripts.com/
+// Dutch Translation by Mathijs Altena https://www.alt-a.nl/
 var uiStrings = {
 	versionError: {
 		en: "This script runs only in InDesign CS4 or higher",
 		de: "Für dieses Skript wird mindestens InDesign CS4 benötigt",
 		fr: "Ce script requiert InDesign CS4 ou supérieur",
-		ja_JP: "このスクリプトはinDesignCS4以上で動作します"
+		ja_JP: "このスクリプトはinDesignCS4以上で動作します",
+        nl: "Dit script werkt alleen met InDesign CS4 of hoger"
 	},
 	writeError: {
 		en: "Cannot write at [%1] Check permissions!",
 		de: "Keine Schreibberechtigung im Ordner [%1]!",
 		fr: "Impossible d'écrire dans [%1]. Vérifiez les permissions système !",
-		ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください"
+		ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください",
+        nl: "Kan niet wegschrijven in [%1], check schrijvrechten"
 	},
 	couldNotRead: {
 		en: "Could not read Query-Files in Folder\n [%1]",
 		de: "Konnte die Abfragen-Datei nicht im Ordner [%1] finden",
 		fr: "Impossible de lire les fichiers de requêtes dans le dossier\n [%1]",
-		ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください"
+		ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください",
+        nl: "Kan de zoekopdrachten in [%1] niet lezen"
 	},
 	windowTitle: {
 		en: "Save GREP Queries",
 		de: "GREP Abfragen speichern",
 		fr: "Sauvegarde des requêtes GREP",
-		ja_JP: "GREPクエリを保存"
+		ja_JP: "GREPクエリを保存",
+        nl: "Bewaar GREPzoekopdrachten"
 	},
 	helpTip: {
 		en: "Usage: \n1. Remove all unnecessary queries from list.\n2. Create the order with the Up and Down Button! \n3. If your happy with your Find/Change List click on Save and a script with your queries is written!",
 		de: "Verwendung: \n1. Lösche alle Abfragen nicht benötigten Abfragen. \n2. Lege die Reihenfolge mit den Hoch und Runter Buttons fest. \n3. Wenn die Liste gut aussieht, wähle Speichern und ein neues Skript mit deinen Abfragen wird generiert!",
 		fr: "Utilisation: \n1. Supprimez de la liste les requêtes superflues.\n2. Ordonnez les requêtes avec les boutons Haut et Bas.\n3. Lorsque la liste est prête, cliquez sur Sauvegarder pour générer le script correspondant.",
-		ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。"
+		ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。",
+        nl: "Werkwijze: \n1. Verwijder alle onnodige zoekopdrachten uit de lijst.\n2. Zet de zoekopdrachten in de juiste volgorde mbv de Up en Down-button! \n3. Ben je klaar, klik dan op Bewaar om het je script te bewaren!"
 	},
 	panelQueryList: {
 		en: "Create an ordered list of queries",
 		de: "Sortiere die Abfragen in der Liste",
 		fr: "Création d'une liste ordonnée de requêtes",
-		ja_JP: "クエリを実行する順番を決めてください"
+		ja_JP: "クエリを実行する順番を決めてください",
+        nl: "Maak een lijst van zoekopdrachten"
 	},
 	buttonUp: {
 		en: "Up",
 		de: "Nach oben",
 		fr: "Haut",
-		ja_JP: "上に移動"
+		ja_JP: "上に移動",
+        nl: "Naar boven"
 	},
 	buttonDown: {
 		en: "Down",
 		de: "Nach unten",
 		fr: "Bas",
-		ja_JP: "下に移動"
+		ja_JP: "下に移動",
+        nl: "Naar beneden"
 	},
 	buttonRm: {
 		en: "Remove from List",
 		de: "Entfernen",
 		fr: "Supprimer de la liste",
-		ja_JP: "削除"
+		ja_JP: "削除",
+        nl: "Verwijder van de lijst"
 	},
 	fcScope: {
 		en: "Scope of Find/Change",
 		de: "Bereich der Ersetzung",
 		fr: "Portée de Rechercher/Remplacer",
-		ja_JP: "検索置換の範囲"
+		ja_JP: "検索置換の範囲",
+        nl: "Zoeken in"
 	},
 	document: {
 		en: "Document",
 		de: "Dokument",
 		fr: "Document",
-		ja_JP: "ドキュメント"
+		ja_JP: "ドキュメント",
+        nl: "Document"
 	},
 	selection: {
 		en: "Selection",
 		de: "Auswahl",
 		fr: "Sélection",
-		ja_JP: "選択範囲"
+		ja_JP: "選択範囲",
+        nl: "Selectie"
 	},
 	story: {
 		en: "Story (of Selection)",
 		de: "Textabschnitt",
 		fr: "Article (contenant la sélection)",
-		ja_JP: "ストーリー"
+		ja_JP: "ストーリー",
+        nl: "Artikel (van selectie)"
 	},
 	userSelect: {
 		en: "User select",
 		de: "Benutzerauswahl",
 		fr: "Sélection de l'utilisateur",
-		ja_JP: "実行時に選択"
+		ja_JP: "実行時に選択",
+        nl: "Selectie van gebruiker"
 	},
 	scriptName: {
 		en: "Script Name",
 		de: "Name des Skripts",
 		fr: "Nom du script",
-		ja_JP: "スクリプト名"
+		ja_JP: "スクリプト名",
+        nl: "Scriptnaam"
 	},
 	cancel: {
 		en: "Cancel",
 		de: "Abbrechen",
 		fr: "Annuler",
-		ja_JP: "キャンセル"
+		ja_JP: "キャンセル",
+        nl: "Annuleren"
 	},
 	saveList: {
 		en: "Save List",
 		de: "Liste speichern",
 		fr: "Sauvegarder la liste",
-		ja_JP: "保存"
+		ja_JP: "保存",
+        nl: "Bewaar lijst/script"
 	},
 	run: {
 		en: "Run",
 		de: "Starten",
 		fr: "Démarrer",
-		ja_JP: "実行"
+		ja_JP: "実行",
+        nl: "Start"
 	},
 	overwrite: {
 		en: "File exists, overwrite?",
 		de: "Datei überschreiben?",
 		fr: "Le fichier existe déjà. Écraser ?",
-		ja_JP: "同名のファイルが存在します。上書きしますか？"
+		ja_JP: "同名のファイルが存在します。上書きしますか？",
+        nl: "Bestand bestaat al, overschrijven?"
 	},
 	scriptFolder: {
 		en: "Script Folder",
 		de: "Skriptordner",
 		fr: "Dossier de script",
-		ja_JP: "スクリプトフォルダ"
+		ja_JP: "スクリプトフォルダ",
+        nl: "Scriptmap"
 	},
 	missingFindCS: {
 		en: "Missing find characterstyle [%1] for query [%2]",
 		de: "Fehlendes Such-Zeichenformat [%1] bei Abfrage [%2]",
 		fr: "La requête [%2] invoque en recherche un style de caractère manquant : [%1]",
-		ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした"
+		ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした",
+        nl: "Gezochte tekenstijl [%1] mist voor zoekopdracht [%2]"
 	},
 	missingFindPS: {
 		en: "Missing find pagraphstyle [%1] for query [%2]",
 		de: "Fehlendes Such-Absatzsformat [%1] bei Abfrage [%2]",
 		fr: "La requête [%2] invoque en recherche un style de paragraphe manquant : [%1]",
-		ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした"
+		ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした",
+        nl: "Gezochte alineastijl [%1] mist voor zoekopdracht [%2]"
 	},
 	missingChangeCS: {
 		en: "Missing change characterstyle [%1] for query [%2]",
 		de: "Fehlendes Ersetze-Zeichenformat [%1] bei Abfrage [%2]",
 		fr: "La requête [%2] invoque en remplacement un style de caractère manquant : [%1]",
-		ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした"
+		ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした",
+        nl: "Vervangende tekenstijl [%1] mist voor zoekopdracht [%2]"
 	},
 	missingChangePS: {
 		en: "Missing change pagraphstyle [%1] for query [%2]",
 		de: "Fehlendes Ersetze-Absatzsformat [%1] bei Abfrage [%2]",
 		fr: "La requête [%2] invoque en remplacement un style de paragraphe manquant : [%1]",
-		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした"
+		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした",
+        nl: "Vervangende alineastijl [%1] mist voor zoekopdracht [%2]"
 	},
 	couldNotLoadQuery: {
 		en: "Could not load Query [%1] Error: ",
 		de: "Die Abfrage [%1] konnte nicht geladen werden. Fehler: ",
 		fr: "Could not load Query [%1] Error: ",
-		ja_JP: "Could not load Query [%1] Error: "
+		ja_JP: "Could not load Query [%1] Error: ",
+        nl: "Zoekopdracht [%1] kan niet worden geladen. Fout: "
 	}
 }
 
