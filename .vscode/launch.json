@@ -10,7 +10,7 @@
             "name": "Current Script",
             "program": "${file}",
             "stopOnEntry": false,
-            "targetSpecifier": "indesign-14.064", 
+            "targetSpecifier": "indesign-15.064", 
             "engineName": "main" 
         },
     ]
