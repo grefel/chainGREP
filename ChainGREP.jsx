@@ -1,8 +1,8 @@
 ﻿//DESCRIPTION:Create FindChange Skripts based on saved Queries
 /* 
-Version:	1.12
+Version:	1.13
 ChainGREP.jsx is licensed GNU GENERAL PUBLIC LICENSE Version 3
-Last-Change:	2019-12-19
+Last-Change:	2021-09-15
 Author: Gregor Fellenz http://publishingx.de
 
 Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
@@ -18,206 +18,206 @@ Example of an fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", 
 // Dutch Translation by Mathijs Altena https://www.alt-a.nl/
 // Chninese Translation by Yuwen
 var uiStrings = {
-    versionError: {
-        en: "This script runs only in InDesign CS4 or higher",
-        de: "Für dieses Skript wird mindestens InDesign CS4 benötigt",
-        fr: "Ce script requiert InDesign CS4 ou supérieur",
-        ja_JP: "このスクリプトはinDesignCS4以上で動作します",
-        nl: "Dit script werkt alleen met InDesign CS4 of hoger",
-        zh_CN: "此脚本只能运行于InDesign CS4或更高版本"
-    },
-    writeError: {
-        en: "Cannot write at [%1] Check permissions!",
-        de: "Keine Schreibberechtigung im Ordner [%1]!",
-        fr: "Impossible d'écrire dans [%1]. Vérifiez les permissions système !",
-        ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください",
-        nl: "Kan niet wegschrijven in [%1], check schrijvrechten", 
-        zh_CN: "无法写入[%1]，请检查路径权限"
-    },
-    couldNotRead: {
-        en: "Could not read Query-Files in Folder\n [%1]",
-        de: "Konnte die Abfragen-Datei nicht im Ordner [%1] finden",
-        fr: "Impossible de lire les fichiers de requêtes dans le dossier\n [%1]",
-        ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください",
-        nl: "Kan de zoekopdrachten in [%1] niet lezen", 
-        zh_CN: "无法读取位于[%1]的查询文件"
-    },
-    windowTitle: {
-        en: "Save GREP Queries",
-        de: "GREP Abfragen speichern",
-        fr: "Sauvegarde des requêtes GREP",
-        ja_JP: "GREPクエリを保存",
-        nl: "Bewaar GREPzoekopdrachten", 
-        zh_CN: "保存GREP查询"
-    },
-    helpTip: {
-        en: "Usage: \n1. Remove all unnecessary queries from list.\n2. Create the order with the Up and Down Button! \n3. If your happy with your Find/Change List click on Save and a script with your queries is written!",
-        de: "Verwendung: \n1. Lösche alle Abfragen nicht benötigten Abfragen. \n2. Lege die Reihenfolge mit den Hoch und Runter Buttons fest. \n3. Wenn die Liste gut aussieht, wähle Speichern und ein neues Skript mit deinen Abfragen wird generiert!",
-        fr: "Utilisation: \n1. Supprimez de la liste les requêtes superflues.\n2. Ordonnez les requêtes avec les boutons Haut et Bas.\n3. Lorsque la liste est prête, cliquez sur Sauvegarder pour générer le script correspondant.",
-        ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。",
-        nl: "Werkwijze: \n1. Verwijder alle onnodige zoekopdrachten uit de lijst.\n2. Zet de zoekopdrachten in de juiste volgorde mbv de Up en Down-button! \n3. Ben je klaar, klik dan op Bewaar om het je script te bewaren!", 
-        zh_CN: "使用方法：\n1. 从列表中移除不需要的查询。 \n2. 用上/下按钮排列顺序。 \n3. 确认列表无误后点击保存，查询脚本文件将自动写入。"
-    },
-    panelQueryList: {
-        en: "Create an ordered list of queries",
-        de: "Sortiere die Abfragen in der Liste",
-        fr: "Création d'une liste ordonnée de requêtes",
-        ja_JP: "クエリを実行する順番を決めてください",
-        nl: "Maak een lijst van zoekopdrachten", 
-        zh_CN: "创建有序的查询列表"
-    },
-    buttonUp: {
-        en: "Up",
-        de: "Nach oben",
-        fr: "Haut",
-        ja_JP: "上に移動",
-        nl: "Naar boven", 
-        zh_CN: "上"
-    },
-    buttonDown: {
-        en: "Down",
-        de: "Nach unten",
-        fr: "Bas",
-        ja_JP: "下に移動",
-        nl: "Naar beneden", 
-        zh_CN: "下"
-    },
-    buttonRm: {
-        en: "Remove from List",
-        de: "Entfernen",
-        fr: "Supprimer de la liste",
-        ja_JP: "削除",
-        nl: "Verwijder van de lijst", 
-        zh_CN: "移除"
-    },
-    fcScope: {
-        en: "Scope of Find/Change",
-        de: "Bereich der Ersetzung",
-        fr: "Portée de Rechercher/Remplacer",
-        ja_JP: "検索置換の範囲",
-        nl: "Zoeken in", 
-        zh_CN: "查找替换范围"
-    },
-    document: {
-        en: "Document",
-        de: "Dokument",
-        fr: "Document",
-        ja_JP: "ドキュメント",
-        nl: "Document", 
-        zh_CN: "文档"
-    },
-    selection: {
-        en: "Selection",
-        de: "Auswahl",
-        fr: "Sélection",
-        ja_JP: "選択範囲",
-        nl: "Selectie", 
-        zh_CN: "选区"
-    },
-    story: {
-        en: "Story (of Selection)",
-        de: "Textabschnitt",
-        fr: "Article (contenant la sélection)",
-        ja_JP: "ストーリー",
-        nl: "Artikel (van selectie)", 
-        zh_CN: "文章"
-    },
-    userSelect: {
-        en: "User select",
-        de: "Benutzerauswahl",
-        fr: "Sélection de l'utilisateur",
-        ja_JP: "実行時に選択",
-        nl: "Selectie van gebruiker", 
-        zh_CN: "用户选择"
-    },
-    scriptName: {
-        en: "Script Name",
-        de: "Name des Skripts",
-        fr: "Nom du script",
-        ja_JP: "スクリプト名",
-        nl: "Scriptnaam", 
-        zh_CN: "脚本名"
-    },
-    cancel: {
-        en: "Cancel",
-        de: "Abbrechen",
-        fr: "Annuler",
-        ja_JP: "キャンセル",
-        nl: "Annuleren", 
-        zh_CN: "取消"
-    },
-    saveList: {
-        en: "Save List",
-        de: "Liste speichern",
-        fr: "Sauvegarder la liste",
-        ja_JP: "保存",
-        nl: "Bewaar lijst/script", 
-        zh_CN: "保存"
-    },
-    run: {
-        en: "Run",
-        de: "Starten",
-        fr: "Démarrer",
-        ja_JP: "実行",
-        nl: "Start", 
-        zh_CN: "运行"
-    },
-    overwrite: {
-        en: "File exists, overwrite?",
-        de: "Datei überschreiben?",
-        fr: "Le fichier existe déjà. Écraser ?",
-        ja_JP: "同名のファイルが存在します。上書きしますか？",
-        nl: "Bestand bestaat al, overschrijven?", 
-        zh_CN: "文件已存在，是否覆盖？"
-    },
-    scriptFolder: {
-        en: "Script Folder",
-        de: "Skriptordner",
-        fr: "Dossier de script",
-        ja_JP: "スクリプトフォルダ",
-        nl: "Scriptmap", 
-        zh_CN: "脚本文件夹"
-    },
-    missingFindCS: {
-        en: "Missing find characterstyle [%1] for query [%2]",
-        de: "Fehlendes Such-Zeichenformat [%1] bei Abfrage [%2]",
-        fr: "La requête [%2] invoque en recherche un style de caractère manquant : [%1]",
-        ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした",
-        nl: "Gezochte tekenstijl [%1] mist voor zoekopdracht [%2]", 
-        zh_CN: "在查找[%2]时未找到字体样式“[%1]”"
-    },
-    missingFindPS: {
-        en: "Missing find pagraphstyle [%1] for query [%2]",
-        de: "Fehlendes Such-Absatzsformat [%1] bei Abfrage [%2]",
-        fr: "La requête [%2] invoque en recherche un style de paragraphe manquant : [%1]",
-        ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした",
-        nl: "Gezochte alineastijl [%1] mist voor zoekopdracht [%2]", 
-        zh_CN: "在查找[%2]时未找到段落样式“[%1]”"
-    },
-    missingChangeCS: {
-        en: "Missing change characterstyle [%1] for query [%2]",
-        de: "Fehlendes Ersetze-Zeichenformat [%1] bei Abfrage [%2]",
-        fr: "La requête [%2] invoque en remplacement un style de caractère manquant : [%1]",
-        ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした",
-        nl: "Vervangende tekenstijl [%1] mist voor zoekopdracht [%2]", 
-        zh_CN: "在替换[%2]时未找到字体样式“[%1]”"
-    },
-    missingChangePS: {
-        en: "Missing change pagraphstyle [%1] for query [%2]",
-        de: "Fehlendes Ersetze-Absatzsformat [%1] bei Abfrage [%2]",
-        fr: "La requête [%2] invoque en remplacement un style de paragraphe manquant : [%1]",
-        ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした",
-        nl: "Vervangende alineastijl [%1] mist voor zoekopdracht [%2]", 
-        zh_CN: "在替换[%2]时未找到段落样式样式“[%1]”"
-    },
-    couldNotLoadQuery: {
-        en: "Could not load Query [%1] Error: ",
-        de: "Die Abfrage [%1] konnte nicht geladen werden. Fehler: ",
-        fr: "Could not load Query [%1] Error: ",
-        ja_JP: "Could not load Query [%1] Error: ",
-        nl: "Zoekopdracht [%1] kan niet worden geladen. Fout: ", 
-        zh_CN: "加载查询[%1]失败，错误信息："
-    }
+	versionError: {
+		en: "This script runs only in InDesign CS4 or higher",
+		de: "Für dieses Skript wird mindestens InDesign CS4 benötigt",
+		fr: "Ce script requiert InDesign CS4 ou supérieur",
+		ja_JP: "このスクリプトはinDesignCS4以上で動作します",
+		nl: "Dit script werkt alleen met InDesign CS4 of hoger",
+		zh_CN: "此脚本只能运行于InDesign CS4或更高版本"
+	},
+	writeError: {
+		en: "Cannot write at [%1] Check permissions!",
+		de: "Keine Schreibberechtigung im Ordner [%1]!",
+		fr: "Impossible d'écrire dans [%1]. Vérifiez les permissions système !",
+		ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください",
+		nl: "Kan niet wegschrijven in [%1], check schrijvrechten",
+		zh_CN: "无法写入[%1]，请检查路径权限"
+	},
+	couldNotRead: {
+		en: "Could not read Query-Files in Folder\n [%1]",
+		de: "Konnte die Abfragen-Datei nicht im Ordner [%1] finden",
+		fr: "Impossible de lire les fichiers de requêtes dans le dossier\n [%1]",
+		ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください",
+		nl: "Kan de zoekopdrachten in [%1] niet lezen",
+		zh_CN: "无法读取位于[%1]的查询文件"
+	},
+	windowTitle: {
+		en: "Save GREP Queries",
+		de: "GREP Abfragen speichern",
+		fr: "Sauvegarde des requêtes GREP",
+		ja_JP: "GREPクエリを保存",
+		nl: "Bewaar GREPzoekopdrachten",
+		zh_CN: "保存GREP查询"
+	},
+	helpTip: {
+		en: "Usage: \n1. Remove all unnecessary queries from list.\n2. Create the order with the Up and Down Button! \n3. If your happy with your Find/Change List click on Save and a script with your queries is written!",
+		de: "Verwendung: \n1. Lösche alle Abfragen nicht benötigten Abfragen. \n2. Lege die Reihenfolge mit den Hoch und Runter Buttons fest. \n3. Wenn die Liste gut aussieht, wähle Speichern und ein neues Skript mit deinen Abfragen wird generiert!",
+		fr: "Utilisation: \n1. Supprimez de la liste les requêtes superflues.\n2. Ordonnez les requêtes avec les boutons Haut et Bas.\n3. Lorsque la liste est prête, cliquez sur Sauvegarder pour générer le script correspondant.",
+		ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。",
+		nl: "Werkwijze: \n1. Verwijder alle onnodige zoekopdrachten uit de lijst.\n2. Zet de zoekopdrachten in de juiste volgorde mbv de Up en Down-button! \n3. Ben je klaar, klik dan op Bewaar om het je script te bewaren!",
+		zh_CN: "使用方法：\n1. 从列表中移除不需要的查询。 \n2. 用上/下按钮排列顺序。 \n3. 确认列表无误后点击保存，查询脚本文件将自动写入。"
+	},
+	panelQueryList: {
+		en: "Create an ordered list of queries",
+		de: "Sortiere die Abfragen in der Liste",
+		fr: "Création d'une liste ordonnée de requêtes",
+		ja_JP: "クエリを実行する順番を決めてください",
+		nl: "Maak een lijst van zoekopdrachten",
+		zh_CN: "创建有序的查询列表"
+	},
+	buttonUp: {
+		en: "Up",
+		de: "Nach oben",
+		fr: "Haut",
+		ja_JP: "上に移動",
+		nl: "Naar boven",
+		zh_CN: "上"
+	},
+	buttonDown: {
+		en: "Down",
+		de: "Nach unten",
+		fr: "Bas",
+		ja_JP: "下に移動",
+		nl: "Naar beneden",
+		zh_CN: "下"
+	},
+	buttonRm: {
+		en: "Remove from List",
+		de: "Entfernen",
+		fr: "Supprimer de la liste",
+		ja_JP: "削除",
+		nl: "Verwijder van de lijst",
+		zh_CN: "移除"
+	},
+	fcScope: {
+		en: "Scope of Find/Change",
+		de: "Bereich der Ersetzung",
+		fr: "Portée de Rechercher/Remplacer",
+		ja_JP: "検索置換の範囲",
+		nl: "Zoeken in",
+		zh_CN: "查找替换范围"
+	},
+	document: {
+		en: "Document",
+		de: "Dokument",
+		fr: "Document",
+		ja_JP: "ドキュメント",
+		nl: "Document",
+		zh_CN: "文档"
+	},
+	selection: {
+		en: "Selection",
+		de: "Auswahl",
+		fr: "Sélection",
+		ja_JP: "選択範囲",
+		nl: "Selectie",
+		zh_CN: "选区"
+	},
+	story: {
+		en: "Story (of Selection)",
+		de: "Textabschnitt",
+		fr: "Article (contenant la sélection)",
+		ja_JP: "ストーリー",
+		nl: "Artikel (van selectie)",
+		zh_CN: "文章"
+	},
+	userSelect: {
+		en: "User select",
+		de: "Benutzerauswahl",
+		fr: "Sélection de l'utilisateur",
+		ja_JP: "実行時に選択",
+		nl: "Selectie van gebruiker",
+		zh_CN: "用户选择"
+	},
+	scriptName: {
+		en: "Script Name",
+		de: "Name des Skripts",
+		fr: "Nom du script",
+		ja_JP: "スクリプト名",
+		nl: "Scriptnaam",
+		zh_CN: "脚本名"
+	},
+	cancel: {
+		en: "Cancel",
+		de: "Abbrechen",
+		fr: "Annuler",
+		ja_JP: "キャンセル",
+		nl: "Annuleren",
+		zh_CN: "取消"
+	},
+	saveList: {
+		en: "Save List",
+		de: "Liste speichern",
+		fr: "Sauvegarder la liste",
+		ja_JP: "保存",
+		nl: "Bewaar lijst/script",
+		zh_CN: "保存"
+	},
+	run: {
+		en: "Run",
+		de: "Starten",
+		fr: "Démarrer",
+		ja_JP: "実行",
+		nl: "Start",
+		zh_CN: "运行"
+	},
+	overwrite: {
+		en: "File exists, overwrite?",
+		de: "Datei überschreiben?",
+		fr: "Le fichier existe déjà. Écraser ?",
+		ja_JP: "同名のファイルが存在します。上書きしますか？",
+		nl: "Bestand bestaat al, overschrijven?",
+		zh_CN: "文件已存在，是否覆盖？"
+	},
+	scriptFolder: {
+		en: "Script Folder",
+		de: "Skriptordner",
+		fr: "Dossier de script",
+		ja_JP: "スクリプトフォルダ",
+		nl: "Scriptmap",
+		zh_CN: "脚本文件夹"
+	},
+	missingFindCS: {
+		en: "Missing find characterstyle [%1] for query [%2]",
+		de: "Fehlendes Such-Zeichenformat [%1] bei Abfrage [%2]",
+		fr: "La requête [%2] invoque en recherche un style de caractère manquant : [%1]",
+		ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした",
+		nl: "Gezochte tekenstijl [%1] mist voor zoekopdracht [%2]",
+		zh_CN: "在查找[%2]时未找到字体样式“[%1]”"
+	},
+	missingFindPS: {
+		en: "Missing find pagraphstyle [%1] for query [%2]",
+		de: "Fehlendes Such-Absatzsformat [%1] bei Abfrage [%2]",
+		fr: "La requête [%2] invoque en recherche un style de paragraphe manquant : [%1]",
+		ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした",
+		nl: "Gezochte alineastijl [%1] mist voor zoekopdracht [%2]",
+		zh_CN: "在查找[%2]时未找到段落样式“[%1]”"
+	},
+	missingChangeCS: {
+		en: "Missing change characterstyle [%1] for query [%2]",
+		de: "Fehlendes Ersetze-Zeichenformat [%1] bei Abfrage [%2]",
+		fr: "La requête [%2] invoque en remplacement un style de caractère manquant : [%1]",
+		ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした",
+		nl: "Vervangende tekenstijl [%1] mist voor zoekopdracht [%2]",
+		zh_CN: "在替换[%2]时未找到字体样式“[%1]”"
+	},
+	missingChangePS: {
+		en: "Missing change pagraphstyle [%1] for query [%2]",
+		de: "Fehlendes Ersetze-Absatzsformat [%1] bei Abfrage [%2]",
+		fr: "La requête [%2] invoque en remplacement un style de paragraphe manquant : [%1]",
+		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした",
+		nl: "Vervangende alineastijl [%1] mist voor zoekopdracht [%2]",
+		zh_CN: "在替换[%2]时未找到段落样式样式“[%1]”"
+	},
+	couldNotLoadQuery: {
+		en: "Could not load Query [%1] Error: ",
+		de: "Die Abfrage [%1] konnte nicht geladen werden. Fehler: ",
+		fr: "Could not load Query [%1] Error: ",
+		ja_JP: "Could not load Query [%1] Error: ",
+		nl: "Zoekopdracht [%1] kan niet worden geladen. Fout: ",
+		zh_CN: "加载查询[%1]失败，错误信息："
+	}
 }
 
 
@@ -308,6 +308,7 @@ function readFolder(fcFolder, fcQueryArray) {
 			changeCStyle = String(searchXML.xpath("/Query/Description/ReplaceFormatSettings/TextAttribute[@type='cstyle']/@value"));
 
 			var fcQueryObject = { name: file.displayName.replace(/\.xml$/, ""), type: "GREP", findWhat: findWhat, changeTo: changeTo, findPStyle: findPStyle, findCStyle: findCStyle, changePStyle: changePStyle, changeCStyle: changeCStyle };
+			// $.writeln("name: " + file.name + " - " + file.displayName.replace(/\.xml$/, ""))
 			fcQueryArray.push(fcQueryObject);
 		}
 	} else {
@@ -331,13 +332,20 @@ function getQueryListUI(fcQueryArray) {
 	list.preferredSize.height = 350;
 	list.preferredSize.width = 420;
 
-	fcQueryArray.sort(function(a, b){
-		if(a.name.toUpperCase() < b.name.toUpperCase()) { return -1; }
-		if(a.name.toUpperCase() > b.name.toUpperCase()) { return 1; }
+	fcQueryArray.sort(function (a, b) {
+		if (a.name.toUpperCase() < b.name.toUpperCase()) { return -1; }
+		if (a.name.toUpperCase() > b.name.toUpperCase()) { return 1; }
+		return 0;
+	})
+	fcQueryArray.sort(function (a, b) {
+		if (isNaN(a.name) || isNaN(a.name)) return 1
+		if (a.name * 1 < b.name * 1) { return -1; }
+		if (a.name * 1 > b.name * 1) { return 1; }
 		return 0;
 	})
 
-	for (var i = 0; i < fcQueryArray.length - 1; i++) {
+	for (var i = 0; i < fcQueryArray.length; i++) {
+		// $.writeln(fcQueryArray[i].name)
 		var lItem = list.add("item", fcQueryArray[i].name);
 		lItem.fcQuery = fcQueryArray[i];
 		lItem.helpTip = "Find: " + fcQueryArray[i].findWhat + "\rChange: " + fcQueryArray[i].changeTo;
