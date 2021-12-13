@@ -18,6 +18,7 @@ Example of an fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", 
 // Dutch Translation by Mathijs Altena https://www.alt-a.nl/
 // Chninese Translation by Yuwen
 // persian Translations by Abdulmaleki http://matnsoft.com/
+// Turkish Translations by Ennis Gündoğan https://gndgn.dev
 var uiStrings = {
 	versionError: {
 		en: "This script runs only in InDesign CS4 or higher",
@@ -26,7 +27,8 @@ var uiStrings = {
 		ja_JP: "このスクリプトはinDesignCS4以上で動作します",
 		nl: "Dit script werkt alleen met InDesign CS4 of hoger",
 		zh_CN: "此脚本只能运行于InDesign CS4或更高版本",
-		fa_IR: "\u200f\u200f" + "این اسکریپت از نسخه cs4 به بعد قابل اجراست"
+		fa_IR: "\u200f\u200f" + "این اسکریپت از نسخه cs4 به بعد قابل اجراست",
+		tr: "Bu komut dosyası yalnızca InDesign CS4 ve sonraki sürümlerde çalışır"
 	},
 	writeError: {
 		en: "Cannot write at [%1] Check permissions!",
@@ -35,7 +37,8 @@ var uiStrings = {
 		ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください",
 		nl: "Kan niet wegschrijven in [%1], check schrijvrechten",
 		zh_CN: "无法写入[%1]，请检查路径权限",
-		fa_IR: "\u200f\u200f" + "نمی توان در پوشه نوشتن [1%]، مجوزهای نوشتن را بررسی کنید!"
+		fa_IR: "\u200f\u200f" + "نمی توان در پوشه نوشتن [1%]، مجوزهای نوشتن را بررسی کنید!",
+		tr: "[%1] klasörüne yazılamıyor. Klasör izinlerini kontrol edin"
 	},
 	couldNotRead: {
 		en: "Could not read Query-Files in Folder\n [%1]",
@@ -44,7 +47,8 @@ var uiStrings = {
 		ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください",
 		nl: "Kan de zoekopdrachten in [%1] niet lezen",
 		zh_CN: "无法读取位于[%1]的查询文件",
-		fa_IR: "\u200f\u200f" + "امکان خواندن فایل کوئری در پوشه وجود ندارد\n [1%]"
+		fa_IR: "\u200f\u200f" + "امکان خواندن فایل کوئری در پوشه وجود ندارد\n [1%]",
+		tr: "[%1] klasöründe sorgu dosyaları bulunamadı"
 	},
 	windowTitle: {
 		en: "Save GREP Queries",
@@ -53,7 +57,8 @@ var uiStrings = {
 		ja_JP: "GREPクエリを保存",
 		nl: "Bewaar GREP zoekopdrachten",
 		zh_CN: "保存GREP查询",
-		fa_IR: "ذخیره گرپ"
+		fa_IR: "ذخیره گرپ",
+		tr: "GREP sorgularını kaydet"
 	},
 	helpTip: {
 		en: "Usage: \n1. Remove all unnecessary queries from list.\n2. Create the order with the Up and Down Button! \n3. If your happy with your Find/Change List click on Save and a script with your queries is written!",
@@ -62,7 +67,8 @@ var uiStrings = {
 		ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。",
 		nl: "Werkwijze: \n1. Verwijder alle onnodige zoekopdrachten uit de lijst.\n2. Zet de zoekopdrachten in de juiste volgorde mbv de Up en Down-button! \n3. Ben je klaar, klik dan op Bewaar om het je script te bewaren!",
 		zh_CN: "使用方法：\n1. 从列表中移除不需要的查询。 \n2. 用上/下按钮排列顺序。 \n3. 确认列表无误后点击保存，查询脚本文件将自动写入。",
-		fa_IR: "\u200f\u200f" + "استفاده کنید: \n1. تمام پرس و جوهای غیر ضروری را از لیست حذف کنید.\n2. با دکمه بالا و پایین تربیت اجرای کوئری را مشخص کنید!\n3. اگر از لیست جست و جوی انجام شده راضی هستید، روی ذخیره کلیک کنید و تا اسکریپت مربوطه ایجاد شود!"
+		fa_IR: "\u200f\u200f" + "استفاده کنید: \n1. تمام پرس و جوهای غیر ضروری را از لیست حذف کنید.\n2. با دکمه بالا و پایین تربیت اجرای کوئری را مشخص کنید!\n3. اگر از لیست جست و جوی انجام شده راضی هستید، روی ذخیره کلیک کنید و تا اسکریپت مربوطه ایجاد شود!",
+		tr: "Kullanım: \n1. Tüm gereksiz sorguları listeden kaldırın.\n2. Sorguları Yukarı ve Aşağı düğmeleriyle sıralayın.\n3. Listenizi düzenledikten sonra, Kaydet’e tıklayarak sorgularınızı içeren bir komut dosyası yazabilirsiniz."
 	},
 	panelQueryList: {
 		en: "Create an ordered list of queries",
@@ -71,7 +77,8 @@ var uiStrings = {
 		ja_JP: "クエリを実行する順番を決めてください",
 		nl: "Maak een lijst van zoekopdrachten",
 		zh_CN: "创建有序的查询列表",
-		fa_IR: "ایجاد لیست مرتب شده از کوئری‌ها"
+		fa_IR: "ایجاد لیست مرتب شده از کوئری‌ها",
+		tr: "Sıralı sorgu listesi oluştur"
 	},
 	buttonUp: {
 		en: "Up",
@@ -80,7 +87,8 @@ var uiStrings = {
 		ja_JP: "上に移動",
 		nl: "Naar boven",
 		zh_CN: "上",
-		fa_IR: "بالا"
+		fa_IR: "بالا",
+		tr: "Yukarı"
 	},
 	buttonDown: {
 		en: "Down",
@@ -89,7 +97,8 @@ var uiStrings = {
 		ja_JP: "下に移動",
 		nl: "Naar beneden",
 		zh_CN: "下",
-		fa_IR: "پایین"
+		fa_IR: "پایین",
+		tr: "Aşağı"
 	},
 	buttonRm: {
 		en: "Remove from List",
@@ -98,7 +107,8 @@ var uiStrings = {
 		ja_JP: "削除",
 		nl: "Verwijder van de lijst",
 		zh_CN: "移除",
-		fa_IR: "حذف از لیست"
+		fa_IR: "حذف از لیست",
+		tr: "Listeden sil"
 	},
 	fcScope: {
 		en: "Scope of Find/Change",
@@ -107,7 +117,8 @@ var uiStrings = {
 		ja_JP: "検索置換の範囲",
 		nl: "Zoeken in",
 		zh_CN: "查找替换范围",
-		fa_IR: "محدوده جست و جو/جایگزینی"
+		fa_IR: "محدوده جست و جو/جایگزینی",
+		tr: "Bul/Değiştir alanı"
 	},
 	document: {
 		en: "Document",
@@ -116,7 +127,8 @@ var uiStrings = {
 		ja_JP: "ドキュメント",
 		nl: "Document",
 		zh_CN: "文档",
-		fa_IR: "سند"
+		fa_IR: "سند",
+		tr: "Belge"
 	},
 	selection: {
 		en: "Selection",
@@ -125,7 +137,8 @@ var uiStrings = {
 		ja_JP: "選択範囲",
 		nl: "Selectie",
 		zh_CN: "选区",
-		fa_IR: "انتخاب"
+		fa_IR: "انتخاب",
+		tr: "Seçim"
 	},
 	story: {
 		en: "Story (of Selection)",
@@ -134,7 +147,8 @@ var uiStrings = {
 		ja_JP: "ストーリー",
 		nl: "Artikel (van selectie)",
 		zh_CN: "文章",
-		fa_IR: "استوری (بخشی انتخابی)"
+		fa_IR: "استوری (بخشی انتخابی)",
+		tr: "Öykü (seçimi içeren)"
 	},
 	userSelect: {
 		en: "User select",
@@ -143,7 +157,8 @@ var uiStrings = {
 		ja_JP: "実行時に選択",
 		nl: "Selectie van gebruiker",
 		zh_CN: "用户选择",
-		fa_IR: "انتخاب کاربر"
+		fa_IR: "انتخاب کاربر",
+		tr: "Kullanıcı seçimi"
 	},
 	scriptName: {
 		en: "Script Name",
@@ -152,7 +167,8 @@ var uiStrings = {
 		ja_JP: "スクリプト名",
 		nl: "Scriptnaam",
 		zh_CN: "脚本名",
-		fa_IR: "نام اسکریپت"
+		fa_IR: "نام اسکریپت",
+		tr: "Komut dosyasının adı"
 	},
 	cancel: {
 		en: "Cancel",
@@ -161,7 +177,8 @@ var uiStrings = {
 		ja_JP: "キャンセル",
 		nl: "Annuleren",
 		zh_CN: "取消",
-		fa_IR: "لغو"
+		fa_IR: "لغو",
+		tr: "İptal"
 	},
 	saveList: {
 		en: "Save List",
@@ -170,7 +187,8 @@ var uiStrings = {
 		ja_JP: "保存",
 		nl: "Bewaar lijst/script",
 		zh_CN: "保存",
-		fa_IR: "ذخیره لیست"
+		fa_IR: "ذخیره لیست",
+		tr: "Listeyi kaydet"
 	},
 	run: {
 		en: "Run",
@@ -179,7 +197,8 @@ var uiStrings = {
 		ja_JP: "実行",
 		nl: "Start",
 		zh_CN: "运行",
-		fa_IR: "اجرا"
+		fa_IR: "اجرا",
+		tr: "Başlat"
 	},
 	overwrite: {
 		en: "File exists, overwrite?",
@@ -188,7 +207,8 @@ var uiStrings = {
 		ja_JP: "同名のファイルが存在します。上書きしますか？",
 		nl: "Bestand bestaat al, overschrijven?",
 		zh_CN: "文件已存在，是否覆盖？",
-		fa_IR: "\u200f\u200f" + "فایل وجود دارد، بازنویسی شود؟"
+		fa_IR: "\u200f\u200f" + "فایل وجود دارد، بازنویسی شود؟",
+		tr: "Bu dosya mevcut. Üzerine yazılsın mı?"
 	},
 	scriptFolder: {
 		en: "Script Folder",
@@ -197,7 +217,8 @@ var uiStrings = {
 		ja_JP: "スクリプトフォルダ",
 		nl: "Scriptmap",
 		zh_CN: "脚本文件夹",
-		fa_IR: "پوشه اسکریپت"
+		fa_IR: "پوشه اسکریپت",
+		tr: "Komut dosyası klasörü"
 	},
 	missingFindCS: {
 		en: "Missing find characterstyle [%1] for query [%2]",
@@ -206,7 +227,8 @@ var uiStrings = {
 		ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした",
 		nl: "Gezochte tekenstijl [%1] mist voor zoekopdracht [%2]",
 		zh_CN: "在查找[%2]时未找到字体样式“[%1]”",
-		fa_IR: "\u200f\u200f" + "جست و جوی شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد"
+		fa_IR: "\u200f\u200f" + "جست و جوی شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد",
+		tr: "[%2] sorgusunda [%1] arama karakter stili bulunamadı"
 	},
 	missingFindPS: {
 		en: "Missing find pagraphstyle [%1] for query [%2]",
@@ -215,7 +237,8 @@ var uiStrings = {
 		ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした",
 		nl: "Gezochte alineastijl [%1] mist voor zoekopdracht [%2]",
 		zh_CN: "在查找[%2]时未找到段落样式“[%1]”",
-		fa_IR: "\u200f\u200f" + "جست و جوی شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد"
+		fa_IR: "\u200f\u200f" + "جست و جوی شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد",
+		tr: "[%2] sorgusunda [%1] arama paragraf stili bulunamadı"
 	},
 	missingChangeCS: {
 		en: "Missing change characterstyle [%1] for query [%2]",
@@ -224,7 +247,8 @@ var uiStrings = {
 		ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした",
 		nl: "Vervangende tekenstijl [%1] mist voor zoekopdracht [%2]",
 		zh_CN: "在替换[%2]时未找到字体样式“[%1]”",
-		fa_IR: "\u200f\u200f" + "تغییر شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد"
+		fa_IR: "\u200f\u200f" + "تغییر شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد",
+		tr: "[%2] sorgusunda [%1] değiştirme karakter stili bulunamadı"
 	},
 	missingChangePS: {
 		en: "Missing change pagraphstyle [%1] for query [%2]",
@@ -233,7 +257,8 @@ var uiStrings = {
 		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした",
 		nl: "Vervangende alineastijl [%1] mist voor zoekopdracht [%2]",
 		zh_CN: "在替换[%2]时未找到段落样式样式“[%1]”",
-		fa_IR: "\u200f\u200f" + "تغییر شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد"
+		fa_IR: "\u200f\u200f" + "تغییر شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد",
+		tr: "[%2] sorgusunda [%1] değiştirme paragraf stili bulunamadı"
 	},
 	couldNotLoadQuery: {
 		en: "Could not load Query [%1] Error: ",
@@ -242,7 +267,8 @@ var uiStrings = {
 		ja_JP: "Could not load Query [%1] Error: ",
 		nl: "Zoekopdracht [%1] kan niet worden geladen. Fout: ",
 		zh_CN: "加载查询[%1]失败，错误信息：",
-		fa_IR: "\u200f\u200f" + "بارگیری کوئری ممکن نیست [1%] خطا:"
+		fa_IR: "\u200f\u200f" + "بارگیری کوئری ممکن نیست [1%] خطا:",
+		tr: "[%1] sorgusu yüklenemedi. Hata: "
 	}
 }
 
