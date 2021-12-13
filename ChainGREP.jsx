@@ -24,7 +24,8 @@ var uiStrings = {
 		fr: "Ce script requiert InDesign CS4 ou supérieur",
 		ja_JP: "このスクリプトはinDesignCS4以上で動作します",
 		nl: "Dit script werkt alleen met InDesign CS4 of hoger",
-		zh_CN: "此脚本只能运行于InDesign CS4或更高版本"
+		zh_CN: "此脚本只能运行于InDesign CS4或更高版本",
+		fa_IR: "\u200f\u200f" + "این اسکریپت از نسخه cs4 به بعد قابل اجراست"
 	},
 	writeError: {
 		en: "Cannot write at [%1] Check permissions!",
@@ -32,7 +33,8 @@ var uiStrings = {
 		fr: "Impossible d'écrire dans [%1]. Vérifiez les permissions système !",
 		ja_JP: "以下のフォルダへ書き込みができませんでした\n\n[%1]\n\n上記フォルダへ書き込みが可能か確認してみてください",
 		nl: "Kan niet wegschrijven in [%1], check schrijvrechten",
-		zh_CN: "无法写入[%1]，请检查路径权限"
+		zh_CN: "无法写入[%1]，请检查路径权限",
+		fa_IR: "\u200f\u200f" + "نمی توان در پوشه نوشتن [1%]، مجوزهای نوشتن را بررسی کنید!"
 	},
 	couldNotRead: {
 		en: "Could not read Query-Files in Folder\n [%1]",
@@ -40,15 +42,17 @@ var uiStrings = {
 		fr: "Impossible de lire les fichiers de requêtes dans le dossier\n [%1]",
 		ja_JP: "以下のフォルダ内からクエリを読み込めませんでした\n\n[%1]\n\nクエリをまだ作成していない場合はクエリを作成後\n再度スクリプトを実行してみてください",
 		nl: "Kan de zoekopdrachten in [%1] niet lezen",
-		zh_CN: "无法读取位于[%1]的查询文件"
+		zh_CN: "无法读取位于[%1]的查询文件",
+		fa_IR: "\u200f\u200f" + "امکان خواندن فایل کوئری در پوشه وجود ندارد\n [1%]"
 	},
 	windowTitle: {
 		en: "Save GREP Queries",
 		de: "GREP Abfragen speichern",
 		fr: "Sauvegarde des requêtes GREP",
 		ja_JP: "GREPクエリを保存",
-		nl: "Bewaar GREPzoekopdrachten",
-		zh_CN: "保存GREP查询"
+		nl: "Bewaar GREP zoekopdrachten",
+		zh_CN: "保存GREP查询",
+		fa_IR: "ذخیره گرپ"
 	},
 	helpTip: {
 		en: "Usage: \n1. Remove all unnecessary queries from list.\n2. Create the order with the Up and Down Button! \n3. If your happy with your Find/Change List click on Save and a script with your queries is written!",
@@ -56,7 +60,8 @@ var uiStrings = {
 		fr: "Utilisation: \n1. Supprimez de la liste les requêtes superflues.\n2. Ordonnez les requêtes avec les boutons Haut et Bas.\n3. Lorsque la liste est prête, cliquez sur Sauvegarder pour générer le script correspondant.",
 		ja_JP: "使用方法：\n1. リストから不要なクエリをすべて削除します。\n2. 上ボタンと下ボタンで実行する順番を決めます。\n3. スクリプトの名前を付け保存をクリックするとスクリプトが完成します！\n\n※ファイル名を入力後、テキストボックスからフォーカスを外すことで保存ボタンが押せるようになります。\n\n※スクリプトは「FindChangeScripts」フォルダに作成されます。一度InDesignのスクリプトパネルを消すか最小化することで作成したスクリプトが表示されます。",
 		nl: "Werkwijze: \n1. Verwijder alle onnodige zoekopdrachten uit de lijst.\n2. Zet de zoekopdrachten in de juiste volgorde mbv de Up en Down-button! \n3. Ben je klaar, klik dan op Bewaar om het je script te bewaren!",
-		zh_CN: "使用方法：\n1. 从列表中移除不需要的查询。 \n2. 用上/下按钮排列顺序。 \n3. 确认列表无误后点击保存，查询脚本文件将自动写入。"
+		zh_CN: "使用方法：\n1. 从列表中移除不需要的查询。 \n2. 用上/下按钮排列顺序。 \n3. 确认列表无误后点击保存，查询脚本文件将自动写入。",
+		fa_IR: "\u200f\u200f" + "استفاده کنید: \n1. تمام پرس و جوهای غیر ضروری را از لیست حذف کنید.\n2. با دکمه بالا و پایین تربیت اجرای کوئری را مشخص کنید!\n3. اگر از لیست جست و جوی انجام شده راضی هستید، روی ذخیره کلیک کنید و تا اسکریپت مربوطه ایجاد شود!"
 	},
 	panelQueryList: {
 		en: "Create an ordered list of queries",
@@ -64,7 +69,8 @@ var uiStrings = {
 		fr: "Création d'une liste ordonnée de requêtes",
 		ja_JP: "クエリを実行する順番を決めてください",
 		nl: "Maak een lijst van zoekopdrachten",
-		zh_CN: "创建有序的查询列表"
+		zh_CN: "创建有序的查询列表",
+		fa_IR: "ایجاد لیست مرتب شده از کوئری‌ها"
 	},
 	buttonUp: {
 		en: "Up",
@@ -72,7 +78,8 @@ var uiStrings = {
 		fr: "Haut",
 		ja_JP: "上に移動",
 		nl: "Naar boven",
-		zh_CN: "上"
+		zh_CN: "上",
+		fa_IR: "بالا"
 	},
 	buttonDown: {
 		en: "Down",
@@ -80,7 +87,8 @@ var uiStrings = {
 		fr: "Bas",
 		ja_JP: "下に移動",
 		nl: "Naar beneden",
-		zh_CN: "下"
+		zh_CN: "下",
+		fa_IR: "پایین"
 	},
 	buttonRm: {
 		en: "Remove from List",
@@ -88,7 +96,8 @@ var uiStrings = {
 		fr: "Supprimer de la liste",
 		ja_JP: "削除",
 		nl: "Verwijder van de lijst",
-		zh_CN: "移除"
+		zh_CN: "移除",
+		fa_IR: "حذف از لیست"
 	},
 	fcScope: {
 		en: "Scope of Find/Change",
@@ -96,7 +105,8 @@ var uiStrings = {
 		fr: "Portée de Rechercher/Remplacer",
 		ja_JP: "検索置換の範囲",
 		nl: "Zoeken in",
-		zh_CN: "查找替换范围"
+		zh_CN: "查找替换范围",
+		fa_IR: "محدوده جست و جو/جایگزینی"
 	},
 	document: {
 		en: "Document",
@@ -104,7 +114,8 @@ var uiStrings = {
 		fr: "Document",
 		ja_JP: "ドキュメント",
 		nl: "Document",
-		zh_CN: "文档"
+		zh_CN: "文档",
+		fa_IR: "سند"
 	},
 	selection: {
 		en: "Selection",
@@ -112,7 +123,8 @@ var uiStrings = {
 		fr: "Sélection",
 		ja_JP: "選択範囲",
 		nl: "Selectie",
-		zh_CN: "选区"
+		zh_CN: "选区",
+		fa_IR: "انتخاب"
 	},
 	story: {
 		en: "Story (of Selection)",
@@ -120,7 +132,8 @@ var uiStrings = {
 		fr: "Article (contenant la sélection)",
 		ja_JP: "ストーリー",
 		nl: "Artikel (van selectie)",
-		zh_CN: "文章"
+		zh_CN: "文章",
+		fa_IR: "استوری (بخشی انتخابی)"
 	},
 	userSelect: {
 		en: "User select",
@@ -128,7 +141,8 @@ var uiStrings = {
 		fr: "Sélection de l'utilisateur",
 		ja_JP: "実行時に選択",
 		nl: "Selectie van gebruiker",
-		zh_CN: "用户选择"
+		zh_CN: "用户选择",
+		fa_IR: "انتخاب کاربر"
 	},
 	scriptName: {
 		en: "Script Name",
@@ -136,7 +150,8 @@ var uiStrings = {
 		fr: "Nom du script",
 		ja_JP: "スクリプト名",
 		nl: "Scriptnaam",
-		zh_CN: "脚本名"
+		zh_CN: "脚本名",
+		fa_IR: "نام اسکریپت"
 	},
 	cancel: {
 		en: "Cancel",
@@ -144,7 +159,8 @@ var uiStrings = {
 		fr: "Annuler",
 		ja_JP: "キャンセル",
 		nl: "Annuleren",
-		zh_CN: "取消"
+		zh_CN: "取消",
+		fa_IR: "لغو"
 	},
 	saveList: {
 		en: "Save List",
@@ -152,7 +168,8 @@ var uiStrings = {
 		fr: "Sauvegarder la liste",
 		ja_JP: "保存",
 		nl: "Bewaar lijst/script",
-		zh_CN: "保存"
+		zh_CN: "保存",
+		fa_IR: "ذخیره لیست"
 	},
 	run: {
 		en: "Run",
@@ -160,7 +177,8 @@ var uiStrings = {
 		fr: "Démarrer",
 		ja_JP: "実行",
 		nl: "Start",
-		zh_CN: "运行"
+		zh_CN: "运行",
+		fa_IR: "اجرا"
 	},
 	overwrite: {
 		en: "File exists, overwrite?",
@@ -168,7 +186,8 @@ var uiStrings = {
 		fr: "Le fichier existe déjà. Écraser ?",
 		ja_JP: "同名のファイルが存在します。上書きしますか？",
 		nl: "Bestand bestaat al, overschrijven?",
-		zh_CN: "文件已存在，是否覆盖？"
+		zh_CN: "文件已存在，是否覆盖？",
+		fa_IR: "\u200f\u200f" + "فایل وجود دارد، بازنویسی شود؟"
 	},
 	scriptFolder: {
 		en: "Script Folder",
@@ -176,7 +195,8 @@ var uiStrings = {
 		fr: "Dossier de script",
 		ja_JP: "スクリプトフォルダ",
 		nl: "Scriptmap",
-		zh_CN: "脚本文件夹"
+		zh_CN: "脚本文件夹",
+		fa_IR: "پوشه اسکریپت"
 	},
 	missingFindCS: {
 		en: "Missing find characterstyle [%1] for query [%2]",
@@ -184,7 +204,8 @@ var uiStrings = {
 		fr: "La requête [%2] invoque en recherche un style de caractère manquant : [%1]",
 		ja_JP: "クエリ[%2]の検索形式に設定された文字スタイル[%1]が見つかりませんでした",
 		nl: "Gezochte tekenstijl [%1] mist voor zoekopdracht [%2]",
-		zh_CN: "在查找[%2]时未找到字体样式“[%1]”"
+		zh_CN: "在查找[%2]时未找到字体样式“[%1]”",
+		fa_IR: "\u200f\u200f" + "جست و جوی شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد"
 	},
 	missingFindPS: {
 		en: "Missing find pagraphstyle [%1] for query [%2]",
@@ -192,7 +213,8 @@ var uiStrings = {
 		fr: "La requête [%2] invoque en recherche un style de paragraphe manquant : [%1]",
 		ja_JP: "クエリ[%2]の検索形式に設定された段落スタイル[%1]が見つかりませんでした",
 		nl: "Gezochte alineastijl [%1] mist voor zoekopdracht [%2]",
-		zh_CN: "在查找[%2]时未找到段落样式“[%1]”"
+		zh_CN: "在查找[%2]时未找到段落样式“[%1]”",
+		fa_IR: "\u200f\u200f" + "جست و جوی شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد"
 	},
 	missingChangeCS: {
 		en: "Missing change characterstyle [%1] for query [%2]",
@@ -200,7 +222,8 @@ var uiStrings = {
 		fr: "La requête [%2] invoque en remplacement un style de caractère manquant : [%1]",
 		ja_JP: "クエリ[%2]の置換形式に設定された文字スタイル[%1]が見つかりませんでした",
 		nl: "Vervangende tekenstijl [%1] mist voor zoekopdracht [%2]",
-		zh_CN: "在替换[%2]时未找到字体样式“[%1]”"
+		zh_CN: "在替换[%2]时未找到字体样式“[%1]”",
+		fa_IR: "\u200f\u200f" + "تغییر شیوه کاراکتری [1%] برای کوئری [2%] وجود ندارد"
 	},
 	missingChangePS: {
 		en: "Missing change pagraphstyle [%1] for query [%2]",
@@ -208,7 +231,8 @@ var uiStrings = {
 		fr: "La requête [%2] invoque en remplacement un style de paragraphe manquant : [%1]",
 		ja_JP: "クエリ[%2]の置換形式に設定された段落スタイル[%1]が見つかりませんでした",
 		nl: "Vervangende alineastijl [%1] mist voor zoekopdracht [%2]",
-		zh_CN: "在替换[%2]时未找到段落样式样式“[%1]”"
+		zh_CN: "在替换[%2]时未找到段落样式样式“[%1]”",
+		fa_IR: "\u200f\u200f" + "تغییر شیوه پاراگرافی [1%] برای کوئری [2%] وجود ندارد"
 	},
 	couldNotLoadQuery: {
 		en: "Could not load Query [%1] Error: ",
@@ -216,7 +240,8 @@ var uiStrings = {
 		fr: "Could not load Query [%1] Error: ",
 		ja_JP: "Could not load Query [%1] Error: ",
 		nl: "Zoekopdracht [%1] kan niet worden geladen. Fout: ",
-		zh_CN: "加载查询[%1]失败，错误信息："
+		zh_CN: "加载查询[%1]失败，错误信息：",
+		fa_IR: "\u200f\u200f" + "بارگیری کوئری ممکن نیست [1%] خطا:"
 	}
 }
 

@@ -1,17 +1,26 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "extendscript-debug",
-            "request": "launch",
-            "name": "Current Script",
-            "program": "${file}",
-            "stopOnEntry": false,
-            "targetSpecifier": "indesign-16.064", 
-            "engineName": "main" 
+            "request": "attach",
+            "name": "InDesign 22",
+            "hostAppSpecifier": "indesign-17.064",
+            "engineName": "main"
         },
+        {
+            "type": "extendscript-debug",
+            "request": "attach",
+            "name": "InDesign 21",
+            "hostAppSpecifier": "indesign-16.064",
+            "engineName": "main"
+        },
+        {
+            "type": "extendscript-debug",
+            "request": "attach",
+            "name": "InDesign 20",
+            "hostAppSpecifier": "indesign-15.064",
+            "engineName": "main"
+        }
     ]
 }
