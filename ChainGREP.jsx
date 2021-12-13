@@ -17,6 +17,7 @@ Example of an fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", 
 // French Translation by Marc Autret http://www.indiscripts.com/
 // Dutch Translation by Mathijs Altena https://www.alt-a.nl/
 // Chninese Translation by Yuwen
+// persian Translations by Abdulmaleki http://matnsoft.com/
 var uiStrings = {
 	versionError: {
 		en: "This script runs only in InDesign CS4 or higher",
