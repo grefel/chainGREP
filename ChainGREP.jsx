@@ -2,7 +2,7 @@
 /* 
 Version:	1.13
 ChainGREP.jsx is licensed GNU GENERAL PUBLIC LICENSE Version 3
-Last-Change:	2021-09-15
+Last-Change:	2021-12-14
 Author: Gregor Fellenz http://publishingx.de
 
 Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
@@ -10,15 +10,17 @@ Thanks to Peter Kahrel http://www.kahrel.plus.com for valuable inspiration!
 Example of an fcQueryObject = {name: "", type:"GREP", findWhat:"", changeTo:"", findPStyle:"", findCStyle:"", changePStyle:"", changeCStyle:""}
 */
 
-/* If you add further translations, please send your uiStrings object to Gregor Fellenz http://publishingx.de
+/* 
+	If you add further translations, please send your uiStrings object to Gregor Fellenz http://publishingx.de
 	If you feel uncertain how to add translation string, simply send the strings.
+
+	Japanese Translations by Yu https://twitter.com/Yo_Yu_You
+	French Translation by Marc Autret http://www.indiscripts.com
+	Dutch Translation by Mathijs Altena https://www.alt-a.nl
+	Chinese Translation by Yuwen
+	persian Translations by Abdulmaleki http://matnsoft.com
+	Turkish Translations by Ennis Gündoğan https://gndgn.dev
 */
-// Japanese Translations by Yu https://twitter.com/Yo_Yu_You
-// French Translation by Marc Autret http://www.indiscripts.com/
-// Dutch Translation by Mathijs Altena https://www.alt-a.nl/
-// Chninese Translation by Yuwen
-// persian Translations by Abdulmaleki http://matnsoft.com/
-// Turkish Translations by Ennis Gündoğan https://gndgn.dev
 var uiStrings = {
 	versionError: {
 		en: "This script runs only in InDesign CS4 or higher",
