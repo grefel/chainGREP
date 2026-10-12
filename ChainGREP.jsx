@@ -434,9 +434,9 @@ function getQueryListUI(fcQueryArray) {
 	lbPanel.alignment = ["fill", "fill"];
 	lbPanel.margins = [10, 20, 10, 10];
 
-	var list = lbPanel.add("listbox", undefined, undefined, { numberOfColumns: 4, showHeaders: true, columnTitles: ["Finc/Change Query", "Type", "Find", "Change"], multiselect: true, columnWidths: [350, 50, 100, 100] });
+	var list = lbPanel.add("listbox", undefined, undefined, { numberOfColumns: 4, showHeaders: true, columnTitles: ["Find/Change Query", "Type", "Find", "Change"], multiselect: true, columnWidths: [350, 50, 100, 100] });
 	list.alignment = ["fill", "fill"];
-	list.preferredSize.height = 350;
+	list.preferredSize.height = 150;
 	list.preferredSize.width = 420;
 
 	fcQueryArray.sort(function (a, b) {
